@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lighthouse Assembly International Church</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #003366;
+      color: white;
+      padding: 2rem 1rem;
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      text-align: left;
+    }
+    header img {
+      max-height: 80px;
+    }
+    .header-text h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    .header-text p {
+      margin: 0;
+      font-style: italic;
+      color: #ffcc00;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #003366;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .highlight {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background: #001f4d;
+      margin-bottom: 1rem;
+    }
+    .tabs button {
+      flex: 1;
+      padding: 1rem;
+      background: #001f4d;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .tabs button.active {
+      background: #003366;
+      border-bottom: 3px solid #ffcc00;
+    }
+    .tab-content {
+      display: none;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .map-container {
+      margin-top: 1rem;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      transition: height 0.5s ease;
+    }
+    .map-container.expanded iframe {
+      height: 600px;
+    }
+    .expand-map-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: #003366;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+    .expand-map-btn:hover {
+      background: #001f4d;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="logo.png" alt="Lighthouse Church Logo">
+      <div class="header-text">
+        <h1>Lighthouse Assembly International Church</h1>
+        <p>Holy Spirit Love Centre</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-button active" data-tab="services">Services</button>
+    <button class="tab-button" data-tab="contact">Contact</button>
+  </div>
+
+  <section id="services" class="tab-content active">
+    <h2>Service Times</h2>
+    <div class="card">
+      <p><strong>Sunday:</strong> 10:00 AM – 12:00 PM (Sunday Service)</p>
+      <p><strong>Sunday:</strong> 3:00 PM – 6:00 PM (Romanian Fellowship/Worship Service)</p>
+      <p><strong>Tuesday:</strong> 7:00 PM – 8:00 PM (Prayer Meeting)</p>
+      <p><strong>Friday:</strong> 7:00 PM – 8:30 PM (Bible Study)</p>
+      <p><strong>Saturday:</strong> 5:00 PM – 8:00 PM (Indian Fellowship/Worship Service)</p>
+    </div>
+    <div class="card">
+      <h3>About Our Services</h3>
+      <p>At Lighthouse Assembly International Church, our services are Spirit-filled, welcoming, and centered on God’s Word. Each gathering is an opportunity to worship, grow in faith, and connect with people from all walks of life. We welcome you to be part of our family, whether you’re new to faith or seeking a deeper relationship with God.</p>
+    </div>
+    <div class="card">
+      <h3>For All Upcoming Events</h3>
+      <p>Stay connected with our community! We regularly update this section with information on revival meetings, guest speaker events, and outreach activities. Keep an eye on our announcements in service for details, or contact us directly for more information.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="tab-content">
+    <h2>Contact Us</h2>
+    <div class="card">
+      <p><strong>Address:</strong> Unit 5, Glenrock Business Park, Ballybane Ind Est, Galway, H91 RFC1</p>
+      <p><strong>Google Maps:</strong> <a href="https://g.co/kgs/FWUUM9" target="_blank">Find us here</a></p>
+      <p><strong>Phone:</strong> Ken: <span class="highlight">085 734 48 41</span></p>
+      <div class="map-container" id="mapContainer">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.192067173906!2d-9.0107086!3d53.2833957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96fdd9073f0b%3A0xa0f3c1ab0d9f8e7c!2sUnit%205%2C%20Glenrock%20Business%20Park%2C%20Ballybane%20Ind%20Est%2C%20Galway%2C%20H91%20RFC1!5e0!3m2!1sen!2sie!4v1694000000000!5m2!1sen!2sie" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <button class="expand-map-btn" onclick="toggleMap()">Expand Map</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>“All Nations that God has made shall come and worship before you, Oh Almighty God.” – Psalm 86:9</p>
+    <p>&copy; 2025 Lighthouse Assembly International Church | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+
+        button.classList.add('active');
+        const target = document.getElementById(button.dataset.tab);
+        target.classList.add('active');
+      });
+    });
+
+    function toggleMap() {
+      const mapContainer = document.getElementById('mapContainer');
+      mapContainer.classList.toggle('expanded');
+      const btn = mapContainer.querySelector('.expand-map-btn');
+      btn.textContent = mapContainer.classList.contains('expanded') ? 'Shrink Map' : 'Expand Map';
+    }
+  </script>
+</body>
+</html>
