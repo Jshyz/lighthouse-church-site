@@ -16,6 +16,7 @@
       background: #003366;
       color: white;
       padding: 2rem 1rem;
+      text-align: center;
     }
     .header-content {
       display: flex;
@@ -27,6 +28,7 @@
     }
     header img {
       max-height: 80px;
+      border-radius: 50%;
     }
     .header-text h1 {
       margin: 0;
@@ -36,6 +38,18 @@
       margin: 0;
       font-style: italic;
       color: #ffcc00;
+    }
+    .hero {
+      width: 100%;
+      height: 300px;
+      background: url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      font-size: 2rem;
+      font-weight: bold;
     }
     section {
       padding: 2rem;
@@ -128,18 +142,46 @@
     .expand-map-btn:hover {
       background: #001f4d;
     }
+    /* Form styling */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    input[type="text"], input[type="email"] {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      width: 100%;
+    }
+    button.subscribe-btn {
+      background: #003366;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button.subscribe-btn:hover {
+      background: #001f4d;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="header-content">
-      <img src="logo.png" alt="Lighthouse Church Logo">
+      <img src="https://images.unsplash.com/photo-1524492449090-1a065f3a3a56?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Lighthouse Church Logo">
       <div class="header-text">
         <h1>Lighthouse Assembly International Church</h1>
         <p>Holy Spirit Love Centre</p>
       </div>
     </div>
   </header>
+
+  <div class="hero">Welcome Home to Lighthouse</div>
 
   <div class="tabs">
     <button class="tab-button active" data-tab="services">Services</button>
@@ -162,6 +204,11 @@
     <div class="card">
       <h3>For All Upcoming Events</h3>
       <p>Stay connected with our community! We regularly update this section with information on revival meetings, guest speaker events, and outreach activities. Keep an eye on our announcements in service for details, or contact us directly for more information.</p>
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit" class="subscribe-btn">Subscribe for Updates</button>
+      </form>
     </div>
   </section>
 
@@ -169,15 +216,10 @@
     <h2>Contact Us</h2>
     <div class="card">
       <p><strong>Address:</strong> Unit 5, Glenrock Business Park, Ballybane Ind Est, Galway, H91 RFC1</p>
-      <p><strong>Google Maps:</strong> 
-        <a href="https://www.google.com/maps/place/Galway,+H91+RFC1,+Ireland/" target="_blank">Find us here</a>
-      </p>
+      <p><strong>Google Maps:</strong> <a href="https://g.co/kgs/FWUUM9" target="_blank">Find us here</a></p>
       <p><strong>Phone:</strong> Ken: <span class="highlight">085 734 48 41</span></p>
       <div class="map-container" id="mapContainer">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1369.7403111317847!2d-9.01686095013322!3d53.292102606612445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b914b4aa22f33%3A0xbbc6805362486e25!2sGalway%2C%20H91%20RFC1%2C%20Ireland!5e0!3m2!1sen!2suk!4v1757343401761!5m2!1sen!2suk" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.192067173906!2d-9.0107086!3d53.2833957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96fdd9073f0b%3A0xa0f3c1ab0d9f8e7c!2sUnit%205%2C%20Glenrock%20Business%20Park%2C%20Ballybane%20Ind%20Est%2C%20Galway%2C%20H91%20RFC1!5e0!3m2!1sen!2sie!4v1694000000000!5m2!1sen!2sie" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <button class="expand-map-btn" onclick="toggleMap()">Expand Map</button>
       </div>
     </div>
