@@ -27,8 +27,18 @@
       text-align: left;
     }
     header img {
-      max-height: 80px;
+      height: 80px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
       border-radius: 50%;
+    }
+    /* Responsive logo for mobile */
+    @media (max-width: 600px) {
+      header img {
+        height: 60px;
+        max-width: 100px;
+      }
     }
     .header-text h1 {
       margin: 0;
