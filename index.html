@@ -70,13 +70,38 @@
       color: #003366;
       margin-bottom: 1rem;
     }
+
+    /* Card base */
     .card {
+      position: relative;
       background: white;
       padding: 1.5rem;
       border-radius: 10px;
       margin-bottom: 1.5rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      z-index: 1;
     }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15; /* Faded effect */
+      z-index: -1;
+    }
+    /* Specific card backgrounds */
+    .card.services::before {
+      background-image: url('https://images.unsplash.com/photo-1518609878373-06d740f60d8b'); /* church gathering */
+    }
+    .card.about::before {
+      background-image: url('https://images.unsplash.com/photo-1508780709619-79562169bc64'); /* bible */
+    }
+    .card.events::before {
+      background-image: url('https://images.unsplash.com/photo-1520857014576-2c4f4c972b57'); /* community event */
+    }
+
     footer {
       background: #003366;
       color: white;
@@ -200,18 +225,18 @@
 
   <section id="services" class="tab-content active">
     <h2>Service Times</h2>
-    <div class="card">
+    <div class="card services">
       <p><strong>Sunday:</strong> 10:00 AM – 12:00 PM (Sunday Service)</p>
       <p><strong>Sunday:</strong> 3:00 PM – 6:00 PM (Romanian Fellowship/Worship Service)</p>
       <p><strong>Tuesday:</strong> 7:00 PM – 8:00 PM (Prayer Meeting)</p>
       <p><strong>Friday:</strong> 7:00 PM – 8:30 PM (Bible Study)</p>
       <p><strong>Saturday:</strong> 5:00 PM – 8:00 PM (Indian Fellowship/Worship Service)</p>
     </div>
-    <div class="card">
+    <div class="card about">
       <h3>About Our Services</h3>
       <p>At Lighthouse Assembly International Church, our services are Spirit-filled, welcoming, and centered on God’s Word. Each gathering is an opportunity to worship, grow in faith, and connect with people from all walks of life. We welcome you to be part of our family, whether you’re new to faith or seeking a deeper relationship with God.</p>
     </div>
-    <div class="card">
+    <div class="card events">
       <h3>For All Upcoming Events</h3>
       <p>Stay connected with our community! We regularly update this section with information on meetings, guest speaker events, and outreach activities. Keep an eye on our announcements in service for details, or contact us directly for more information.</p>
       <form>
